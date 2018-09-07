@@ -1,0 +1,100 @@
+﻿<Window x:Class="MetodoSimplex.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MetodoSimplex"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Black">Ingresa el Numero de variables objetivo</Label>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Black" x:Name="lblFuncionObjetivoA"></Label>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="PanelDeVariablesYMaxOMin">
+            <StackPanel Orientation="Vertical" Margin="10,0">
+                <RadioButton x:Name="rdMaximizar">Maximizar</RadioButton>
+                <RadioButton x:Name="rdMinimizar">Minimizar</RadioButton>
+            </StackPanel>
+            <Label>Num=</Label>
+            <TextBox Width="150" x:Name="txtNumVariables"></TextBox>
+            <Button Width="60" Height="30" Margin="10,0" x:Name="btnAceptarVariablesDeFuncionObjetivo" Click="btnAceptarVariablesDeFuncionObjetivo_Click">Aceptar</Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="PanelDeVariablesParaFuncionObjetivo">
+            <Label HorizontalAlignment="Center">Ingresa los coeficientes de:</Label>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="XDeFuncionObjetivo">x</Label>
+                <TextBox Width="150" x:Name="txtCoeficientesDeFuncionObjetivo"></TextBox>
+                <Button Height="30" Width="60" Margin="10,0" x:Name="btnAcptarCoeficientesDeVariablesDeFuncionObjetivo">Aceptar</Button>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Black" x:Name="lblDeEcuacines">Ingresa el numero de ecuaciones a reinstringir</Label>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="PanelDeEcuacionesDeRestriccion">
+            <Label>Num=</Label>
+            <TextBox Width="150" x:Name="txtNumEcuaciones"></TextBox>
+            <Button Width="60" Height="30" Margin="10,0" x:Name="btnAceptarEcuacionesDeReintriccion" Click="btnAceptarEcuacionesDeReintriccion_Click">Aceptar</Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="PanelDeVariablesParaEcuacionesDeRestriccion">
+            <Label HorizontalAlignment="Center" x:Name="IngresalosCoeficientesDe"></Label>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="XDeEcuacionesDe" FontSize="15" VerticalAlignment="Center">x</Label>
+                <TextBox Width="50" Height="30" x:Name="txtCoeficientesDeFuncionRestriccion"></TextBox>
+                <Button Height="30" Width="60" Margin="10,0" x:Name="btnAcptarCoeficientesDeVariablesDeFuncionRestriccion">Aceptar</Button>
+                <StackPanel Orientation="Horizontal" x:Name="panelDeIgualacionDeEcuacion">
+                    <StackPanel Orientation="Vertical">
+                        <RadioButton Margin="5,3" x:Name="rdMayorIgual">
+                            <StackPanel>
+                                <Image Source="Img/MayorIgual.png" Width="15"></Image>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton Margin="5,3" x:Name="rdMenorIgual">
+                            <StackPanel>
+                                <Image Source="Img/MenorIgual.png" Width="10"></Image>
+                            </StackPanel>
+                        </RadioButton>
+                        <RadioButton Margin="5,3">
+                            <StackPanel>
+                                <Image Source="Img/Igual.png" Width="12" x:Name="rdIgual"></Image>
+                            </StackPanel>
+                        </RadioButton>
+                    </StackPanel>
+                    <TextBox Width="50" Height="30" Margin="5,0" x:Name="txtFuncionIgualA"></TextBox>
+                    <Button Height="30" Width="60" Margin="10,0" x:Name="btnAceptarLaEcuacion">Aceptar</Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Width="60" Height="30" Margin="5,0" x:Name="btnNuevo">Nuevo</Button>
+            <Button Width="60" Height="30" Margin="5,0" x:Name="btnCancelar" Click="btnCancelar_Click">Cancelar</Button>
+        </StackPanel>
+        
+            <TextBox Grid.Column="2" Grid.Row="1" x:Name="TxtDeVariableDeDecicion"></TextBox>
+        
+        
+    </Grid>
+</Window>

@@ -20,14 +20,28 @@ namespace MetodoSimplex
     /// </summary>
     public partial class MainWindow : Window
     {
+        int NumVariablesFuncionObjetivo = 0;
         public MainWindow()
         {
             InitializeComponent();
 
             PanelDeVariablesParaFuncionObjetivo.Visibility = Visibility.Hidden;
             PanelDeVariablesParaEcuacionesDeRestriccion.Visibility = Visibility.Hidden;
+            panelDeIgualacionDeEcuacion.IsEnabled = false;
             LimpiarCampos();
+            HabilitarBotones(false);
+            
+        }
 
+        private void HabilitarBotones(bool Habilitar)
+        {
+            btnAceptarVariablesDeFuncionObjetivo.IsEnabled = Habilitar;
+            btnAceptarEcuacionesDeReintriccion.IsEnabled = Habilitar;
+            btnNuevo.IsEnabled = !Habilitar;
+            btnCancelar.IsEnabled = Habilitar;
+            btnAceptarDatos.IsEnabled = Habilitar;
+            rdMaximizar.IsEnabled = Habilitar;
+            rdMinimizar.IsEnabled = Habilitar;
         }
 
         private void LimpiarCampos()
@@ -38,6 +52,12 @@ namespace MetodoSimplex
             txtCoeficientesDeFuncionObjetivo.Clear();
             txtCoeficientesDeFuncionRestriccion.Clear();
             txtFuncionIgualA.Clear();
+            rdMinimizar.IsChecked = false;
+            rdMaximizar.IsChecked = false;
+            rdIgual.IsChecked = false;
+            rdMayorIgual.IsChecked = false;
+            rdMenorIgual.IsChecked = false;
+
         }
 
         private void btnAceptarVariablesDeFuncionObjetivo_Click(object sender, RoutedEventArgs e)
@@ -58,8 +78,23 @@ namespace MetodoSimplex
             PanelDeVariablesParaEcuacionesDeRestriccion.Visibility = Visibility.Hidden;
             PanelDeEcuacionesDeRestriccion.Visibility = Visibility.Visible;
             PanelDeVariablesYMaxOMin.Visibility = Visibility.Visible;
+            HabilitarBotones(false);
             LimpiarCampos();
             
         }
+
+        private void btnNuevo_Click(object sender, RoutedEventArgs e)
+        {
+            LimpiarCampos();
+            HabilitarBotones(true);
+            PanelDeVariablesParaEcuacionesDeRestriccion.IsEnabled = false;
+        }
+
+        private void btnAceptarVariablesDeFuncionObjetivo_Click_1(object sender, RoutedEventArgs e)
+        {
+            NumVariablesFuncionObjetivo = int.Parse(txtNumVariables.Text);
+            
+        }
+        
     }
 }

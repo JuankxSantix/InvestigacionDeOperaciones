@@ -39,7 +39,7 @@
             </StackPanel>
             <Label>Num=</Label>
             <TextBox Width="150" x:Name="txtNumVariables"></TextBox>
-            <Button Width="60" Height="30" Margin="10,0" x:Name="btnAceptarVariablesDeFuncionObjetivo" Click="btnAceptarVariablesDeFuncionObjetivo_Click">Aceptar</Button>
+            <Button Width="60" Height="30" Margin="10,0" x:Name="btnAceptarVariablesDeFuncionObjetivo" Click="btnAceptarVariablesDeFuncionObjetivo_Click_1">Aceptar</Button>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="PanelDeVariablesParaFuncionObjetivo">
             <Label HorizontalAlignment="Center">Ingresa los coeficientes de:</Label>
@@ -76,9 +76,9 @@
                                 <Image Source="Img/MenorIgual.png" Width="10"></Image>
                             </StackPanel>
                         </RadioButton>
-                        <RadioButton Margin="5,3">
+                        <RadioButton Margin="5,3" x:Name="rdIgual">
                             <StackPanel>
-                                <Image Source="Img/Igual.png" Width="12" x:Name="rdIgual"></Image>
+                                <Image Source="Img/Igual.png" Width="12" ></Image>
                             </StackPanel>
                         </RadioButton>
                     </StackPanel>
@@ -89,12 +89,14 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Width="60" Height="30" Margin="5,0" x:Name="btnNuevo">Nuevo</Button>
+            <Button Width="60" Height="30" Margin="5,0" x:Name="btnAceptarDatos">Aceptar</Button>
+            <Button Width="60" Height="30" Margin="5,0" x:Name="btnNuevo" Click="btnNuevo_Click">Nuevo</Button>
             <Button Width="60" Height="30" Margin="5,0" x:Name="btnCancelar" Click="btnCancelar_Click">Cancelar</Button>
         </StackPanel>
         
             <TextBox Grid.Column="2" Grid.Row="1" x:Name="TxtDeVariableDeDecicion"></TextBox>
         
-        
+
+
     </Grid>
 </Window>

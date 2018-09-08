@@ -64,6 +64,7 @@ namespace MetodoSimplex
         {
             PanelDeVariablesParaFuncionObjetivo.Visibility = Visibility.Visible;
             PanelDeVariablesYMaxOMin.Visibility = Visibility.Hidden;
+            NumVariablesFuncionObjetivo = int.Parse(txtNumVariables.Text);
         }
 
         private void btnAceptarEcuacionesDeReintriccion_Click(object sender, RoutedEventArgs e)
@@ -89,12 +90,7 @@ namespace MetodoSimplex
             HabilitarBotones(true);
             PanelDeVariablesParaEcuacionesDeRestriccion.IsEnabled = false;
         }
-
-        private void btnAceptarVariablesDeFuncionObjetivo_Click_1(object sender, RoutedEventArgs e)
-        {
-            NumVariablesFuncionObjetivo = int.Parse(txtNumVariables.Text);
-            
-        }
+        
         
     }
 }

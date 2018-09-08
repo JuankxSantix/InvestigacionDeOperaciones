@@ -39,7 +39,7 @@
             </StackPanel>
             <Label>Num=</Label>
             <TextBox Width="150" x:Name="txtNumVariables"></TextBox>
-            <Button Width="60" Height="30" Margin="10,0" x:Name="btnAceptarVariablesDeFuncionObjetivo" Click="btnAceptarVariablesDeFuncionObjetivo_Click_1">Aceptar</Button>
+            <Button Width="60" Height="30" Margin="10,0" x:Name="btnAceptarVariablesDeFuncionObjetivo" Click="btnAceptarVariablesDeFuncionObjetivo_Click">Aceptar</Button>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="PanelDeVariablesParaFuncionObjetivo">
             <Label HorizontalAlignment="Center">Ingresa los coeficientes de:</Label>
